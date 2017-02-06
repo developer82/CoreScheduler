@@ -4,6 +4,18 @@
   "description": "A simple to use task scheduler for .NET core applications. Run code at specific times and set run recurrence.",
   "version": "1.0.0-*",
 
+  "packOptions": {
+    "owners": [ "Ophir Oren" ],
+    "projectUrl": "https://github.com/developer82/CoreScheduler",
+    "tags": [ "Scheduler", "Timer", "Jobs", "Job", "Runner", "Timed Execution", "Repeat" ],
+    "licenseUrl": "https://github.com/developer82/CoreScheduler/blob/master/LICENSE",
+    "iconUrl": "https://github.com/developer82/CoreScheduler/raw/master/Logo.png"
+  },
+
+  "buildOptions": {
+    "xmlDoc": true
+  },
+
   "dependencies": {
     "NETStandard.Library": "1.6.0"
   },
@@ -12,5 +24,11 @@
     "netstandard1.6": {
       "imports": "dnxcore50"
     }
+  },
+
+  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
   }
 }
